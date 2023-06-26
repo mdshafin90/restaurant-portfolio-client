@@ -4,14 +4,14 @@ import './Featured.css'
 
 const Featured = () => {
     return (
-        <div className="mb-10 featured-item p-10">
+        <div className="mb-10 featured-item bg-fixed p-10">
             <div className="pb-8">
                 <SectionTitle
                     subHeading={"Check it Out"}
                     heading={"Featured Menu"}
                 ></SectionTitle>
             </div>
-            <div className="flex justify-center items-center text-white px-14 py-10">
+            <div className="flex bg-opacity-75 bg-black justify-center items-center text-white px-14 py-10">
                 <div>
                     <img src={featuredImg} alt="" />
                 </div>
