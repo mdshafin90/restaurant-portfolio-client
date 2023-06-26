@@ -13,6 +13,7 @@ import { Rating } from "@smastrom/react-rating";
 const Testimonials = () => {
 
     const [reviews, setReviews] = useState([]);
+
     useEffect(() => {
         fetch('reviews.json')
             .then(res => res.json())
@@ -25,18 +26,19 @@ const Testimonials = () => {
                 subHeading={"What Our Client Says"}
                 heading={"Testimonials"}
             ></SectionTitle>
-
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper text-center mx-20 my-20">
+            <Swiper navigation={true} modules={[Navigation]} className="mySwiper text-center">
                 {
                     reviews.map(review => <SwiperSlide
                         key={review._id}
                     >
-                        <Rating
-                            style={{ maxWidth: 180 }}
-                            value={review.rating}
-                            readOnly
-                        />
-                        <p className="py-10">{review.details}</p>
+                        <div className="flex justify-center mt-7">
+                            <Rating
+                                style={{ maxWidth: 180 }}
+                                value={review.rating}
+                                readOnly
+                            />
+                        </div>
+                        <p className="py-10 px-24">{review.details}</p>
                         <h2 className="text-3xl">{review.name}</h2>
                     </SwiperSlide>)
                 }
