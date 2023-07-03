@@ -4,9 +4,13 @@ const NavBar = () => {
 
     const navOptions = <>
         <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/">Home</Link></li>
+
         <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/menu">Our Menu</Link></li>
-        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/dashboard">Dashboard</Link></li>
+
+        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/order/dessert">Order Food</Link></li>
+
         <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/menu">Our Menu</Link></li>
+
         <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/shop">Our Shop</Link></li>
     </>
 
@@ -22,7 +26,7 @@ const NavBar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-[25px]">Happy Grill</a>
+                    <a className="btn btn-ghost normal-case text-[25px]"><Link to="/">Happy Grill</Link></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
