@@ -11,7 +11,7 @@ const NavBar = () => {
 
         <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/menu">Our Menu</Link></li>
 
-        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/shop">Our Shop</Link></li>
+        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/login">Login</Link></li>
     </>
 
     return (
