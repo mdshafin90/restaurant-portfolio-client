@@ -1,17 +1,37 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
 
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
+
     const navOptions = <>
-        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/">Home</Link></li>
+        <button className="btn btn-ghost"><Link to="/">Home</Link></button>
+        <button className="btn btn-ghost"><Link to="/menu">Our Menu</Link></button>
+        <button className="btn btn-ghost"><Link to="/order/dessert">Order Food</Link></button>
+        <button className="btn btn-ghost"><Link to="/secret">Secret</Link></button>
 
-        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/menu">Our Menu</Link></li>
-
-        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/order/dessert">Order Food</Link></li>
-
-        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/menu">Our Menu</Link></li>
-
-        <li><Link className="text-[17px] text-white hover:bg-none hover:bg-sky-400 hover:text-black font-bold" to="/login">Login</Link></li>
+        {
+            user ?
+                <>
+                    <div className="flex items-center mx-2">
+                        <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                            <img className="w-[40px] h-[40px] rounded-full" src={user?.photoURL} alt="" />
+                        </div>
+                    </div>
+                    <button onClick={handleLogOut} className="btn btn-ghost">Logout</button>
+                </> :
+                <>
+                    <button className="btn btn-ghost"><Link to="login">Login</Link></button>
+                </>
+        }
     </>
 
     return (
