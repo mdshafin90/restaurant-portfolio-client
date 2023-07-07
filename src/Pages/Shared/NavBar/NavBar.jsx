@@ -14,6 +14,7 @@ const NavBar = () => {
 
     const navOptions = <>
         <button className="btn btn-ghost"><Link to="/">Home</Link></button>
+        <button className="btn btn-ghost"><Link to="/contact">Contact Us</Link></button>
         <button className="btn btn-ghost"><Link to="/menu">Our Menu</Link></button>
         <button className="btn btn-ghost"><Link to="/order/dessert">Order Food</Link></button>
         <button className="btn btn-ghost"><Link to="/secret">Secret</Link></button>
