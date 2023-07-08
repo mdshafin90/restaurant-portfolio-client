@@ -6,13 +6,16 @@ import useCart from "../Hooks/useCart";
 import { BiSolidBookAlt } from "react-icons/bi";
 import { PiUsersThreeFill } from "react-icons/pi";
 import { ImSpoonKnife } from "react-icons/im";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Dashboard = () => {
 
     const [cart] = useCart();
 
-    const isAdmin = true;
+    // const isAdmin = true;
+
+    const [isAdmin] = useAdmin()
 
     return (
         <div className="drawer lg:drawer-open">

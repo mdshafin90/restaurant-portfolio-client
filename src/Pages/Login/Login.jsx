@@ -1,17 +1,17 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginImg from '../../assets/loginImage/login.png'
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
-import { AuthContext } from '../../providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import useAuth from '../../Hooks/useAuth';
 
 const Login = () => {
 
     const [disabled, setDisabled] = useState(true)
-    const { userSignIn } = useContext(AuthContext)
+    const { userSignIn } = useAuth();
     const navigate = useNavigate()
     const location = useLocation()
 

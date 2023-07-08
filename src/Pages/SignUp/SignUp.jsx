@@ -1,18 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
 import loginImg from '../../assets/loginImage/login.png'
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
-
+import useAuth from "../../Hooks/useAuth";
 
 const SignUp = () => {
 
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
 
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useAuth();
     const navigate = useNavigate()
 
     const onSubmit = (data) => {
@@ -54,7 +52,7 @@ const SignUp = () => {
                     })
                     .catch(error => console.log(error))
             })
-            .catch(error => console.log(error))
+
     }
 
     return (
