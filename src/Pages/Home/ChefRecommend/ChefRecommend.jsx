@@ -19,7 +19,7 @@ const ChefRecommend = () => {
                         <h2 className="card-title">Grilled Steak</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia perferendis, quos possimus corporis voluptatum incidunt assumenda inventore quo</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">Add To Cart</button>
+                            <button className="btn btn-outline border-0 border-b-4 w-[200px]">Add To Cart</button>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ const ChefRecommend = () => {
                         <h2 className="card-title">Steak With Stick</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia perferendis, quos possimus corporis voluptatum incidunt assumenda inventore quo</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">Add To Cart</button>
+                            <button className="btn btn-outline border-0 border-b-4 w-[200px]">Add To Cart</button>
                         </div>
                     </div>
                 </div>
@@ -40,10 +40,10 @@ const ChefRecommend = () => {
                         <img src={recipe3} alt="Shoes" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Tomahot Steak</h2>
+                        <h2 className="card-title">Tomahawk Steak</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia perferendis, quos possimus corporis voluptatum incidunt assumenda inventore quo</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary">Add To Cart</button>
+                            <button className="btn btn-outline border-0 border-b-4 w-[200px]">Add To Cart</button>
                         </div>
                     </div>
                 </div>

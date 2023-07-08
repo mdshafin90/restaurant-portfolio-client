@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import { RiDoubleQuotesL } from 'react-icons/ri';
 
 // import required modules
 import { Navigation } from "swiper";
@@ -31,12 +32,15 @@ const Testimonials = () => {
                     reviews.map(review => <SwiperSlide
                         key={review._id}
                     >
-                        <div className="flex justify-center mt-7">
+                        <div className="flex justify-center">
                             <Rating
                                 style={{ maxWidth: 180 }}
                                 value={review.rating}
                                 readOnly
                             />
+                        </div>
+                        <div className="flex justify-center">
+                            <RiDoubleQuotesL className="w-[100px] h-[100px]" />
                         </div>
                         <p className="py-10 px-24">{review.details}</p>
                         <h2 className="text-3xl">{review.name}</h2>
