@@ -1,13 +1,12 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginImg from '../../assets/loginImage/login.png'
-import { FaFacebook, FaGithub } from 'react-icons/fa';
-import { FcGoogle } from 'react-icons/fc';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -102,22 +101,10 @@ const Login = () => {
                                 </div>
                             </form>
                             <p className='text-center font-bold'>Do Not have an Account ? <Link to="/signup" className='text-blue-600 underline'>Please Sign Up</Link></p>
-                            <div className="divider mx-auto">or Sign In With</div>
-                            <div className='flex w-[250px] mx-auto justify-evenly pb-5'>
-                                <div className='cursor-pointer'>
-                                    <FaFacebook className='h-[30px] w-[30px]' />
-                                </div>
-                                <div className='cursor-pointer'>
-                                    <FcGoogle className='h-[30px] w-[30px]' />
-                                </div>
-                                <div className='cursor-pointer'>
-                                    <FaGithub className='h-[30px] w-[30px]' />
-                                </div>
-                            </div>
+                            <SocialLogin />
                         </div>
                     </div>
                 </div>
-                <Link to="/" className='text-blue-700 underline'>Back To Home</Link>
             </div >
         </>
 

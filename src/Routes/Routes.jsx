@@ -10,6 +10,8 @@ import Secret from "../Pages/Secret/Secret";
 import Contact from "../Pages/Contact/Contact";
 import Dashboard from "../Layouts/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
+import Reservation from "../Pages/Dashboard/Reservation/Reservation";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
     {
@@ -48,11 +50,19 @@ export const router = createBrowserRouter([
     },
     {
         path: "dashboard",
-        element: <Dashboard />,
+        element: <PrivateRoute><Dashboard /></PrivateRoute>,
         children: [
             {
                 path: "mycart",
                 element: <MyCart />
+            },
+            {
+                path: "reservations",
+                element: <Reservation />
+            },
+            {
+                path: "allusers",
+                element: <AllUsers />
             }
         ]
     }

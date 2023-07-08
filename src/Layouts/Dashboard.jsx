@@ -1,13 +1,18 @@
 import { FaCalendarAlt, FaHome, FaShoppingCart, FaStar, FaWallet, FaCalendarCheck } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
-import { AiOutlineMenu, AiFillShopping } from 'react-icons/ai';
+import { AiOutlineMenu, AiFillShopping, AiOutlineBars } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import useCart from "../Hooks/useCart";
+import { BiSolidBookAlt } from "react-icons/bi";
+import { PiUsersThreeFill } from "react-icons/pi";
+import { ImSpoonKnife } from "react-icons/im";
 
 
 const Dashboard = () => {
 
-    const [cart] = useCart()
+    const [cart] = useCart();
+
+    const isAdmin = true;
 
     return (
         <div className="drawer lg:drawer-open">
@@ -22,17 +27,31 @@ const Dashboard = () => {
                 <ul className="menu p-4 w-80 h-full">
                     <li className="text-center text-3xl font-bold uppercase mb-2">Happy Grill</li>
                     <li className="text-center text-[16px] font-bold uppercase mb-5">Restaurant & Steak House</li>
-                    {/* Sidebar content here */}
-                    <li className="font-bold text-[20px] mb-2"><NavLink to="/"><FaHome /> User Home</NavLink></li>
-                    <li className="font-bold text-[20px] mb-2">
-                        <NavLink to="/dashboard/mycart"><FaShoppingCart /> My Cart
-                            <span className="badge badge-secondary">+{cart?.length || 0}</span>
-                        </NavLink>
-                    </li>
-                    <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/reservations"><FaCalendarAlt /> Reservation</NavLink></li>
-                    <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/history"><FaWallet /> Payment History</NavLink></li>
-                    <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/review"><FaStar /> Add Review</NavLink></li>
-                    <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/bookings"><FaCalendarCheck /> My Bookings</NavLink></li>
+                    {
+                        isAdmin ?
+                            <>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/"><FaHome /> Admin Home</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/additems"><ImSpoonKnife /> Add Items</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/reservations"><AiOutlineBars /> Manage Items</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/history"><BiSolidBookAlt /> Manage Bookings</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/allusers"><PiUsersThreeFill /> All Users</NavLink></li>
+                            </>
+
+                            :
+                            <>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/"><FaHome /> User Home</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2">
+                                    <NavLink to="/dashboard/mycart"><FaShoppingCart /> My Cart
+                                        <span className="badge badge-secondary">+{cart?.length || 0}</span>
+                                    </NavLink>
+                                </li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/reservations"><FaCalendarAlt /> Reservation</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/history"><FaWallet /> Payment History</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/review"><FaStar /> Add Review</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/bookings"><FaCalendarCheck /> My Bookings</NavLink></li>
+                            </>
+                    }
+
                     <div className="border border-spacing-3 border-purple-900 my-5"></div>
                     <li className="font-bold text-[20px] mb-2"><NavLink to="/"><FaHome /> Home</NavLink></li>
                     <li className="font-bold text-[20px] mb-2"><NavLink to="/menu"><AiOutlineMenu /> Menu</NavLink></li>

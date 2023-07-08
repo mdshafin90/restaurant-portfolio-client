@@ -8,6 +8,7 @@ const MyCart = () => {
     const [cart, refetch] = useCart();
     console.log(cart)
     const total = cart.reduce((sum, item) => item.price + sum, 0);
+    const newTotal = total.toFixed(2);
 
     const handleDelete = (item) => {
         Swal.fire({
@@ -43,9 +44,9 @@ const MyCart = () => {
             <Helmet>
                 <title>Happy Grill | My Cart</title>
             </Helmet>
-            <div className="uppercase flex justify-evenly items-center h-[60px] mb-5 w-full">
+            <div className="uppercase flex justify-evenly font-bold items-center h-[60px] mb-5 w-full">
                 <h3 className="text-3xl">Total Items: {cart.length}</h3>
-                <h3 className="text-3xl">Total Price: ${total}</h3>
+                <h3 className="text-3xl">Total Price: ${newTotal}</h3>
                 <button className="btn btn-outline btn-sm">Pay</button>
             </div>
 
@@ -81,7 +82,7 @@ const MyCart = () => {
                                 </td>
                                 <td className="text-end">${item.price}</td>
                                 <td>
-                                    <button onClick={() => handleDelete(item)} className="btn btn-error text-white btn-lg"><FaTrashAlt /></button>
+                                    <button onClick={() => handleDelete(item)} className="btn btn-error text-white"><FaTrashAlt /></button>
                                 </td>
                             </tr>)
                         }
