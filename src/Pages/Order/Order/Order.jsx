@@ -15,11 +15,11 @@ const Order = () => {
     const [tabIndex, setTabIndex] = useState(initialIndex);
     const [menu] = useMenu()
 
-    const desserts = menu.filter(item => item.category === 'dessert')
-    const soup = menu.filter(item => item.category === 'Soup')
-    const salad = menu.filter(item => item.category === 'Salad')
-    const pizza = menu.filter(item => item.category === 'Pizza')
-    const drinks = menu.filter(item => item.category == 'Drinks')
+    const desserts = menu.filter(item => item.category === 'dessert');
+    const soup = menu.filter(item => item.category === 'soup');
+    const salad = menu.filter(item => item.category === 'salad');
+    const pizza = menu.filter(item => item.category === 'pizza');
+    const drinks = menu.filter(item => item.category === 'drinks');
     const deshi = menu.filter(item => item.category == 'Deshi')
 
     return (
