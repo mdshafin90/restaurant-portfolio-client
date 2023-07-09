@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import loginImg from '../../assets/loginImage/login.png'
+import signUpImg from '../../assets/loginImage/signUp.png'
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
@@ -64,8 +64,7 @@ const SignUp = () => {
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <p className='text-center text-4xl font-extrabold mb-4'>Sign Up !!!</p>
-                            <img src={loginImg} alt="" />
+                            <img src={signUpImg} alt="" />
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -127,12 +126,11 @@ const SignUp = () => {
                                         )}
                                     </p>
                                 </div>
-                                <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Sign Up</button>
+                                <div className="form-control">
+                                    <button className="btn btn-ghost border-0 border-b-4">Sign Up</button>
                                 </div>
                             </form>
                             <p className='text-center font-bold'>Already have an Account ? <Link to="/login" className='text-blue-600 underline'>Please Login</Link></p>
-                            <div className="divider mx-auto">or Sign In With</div>
                             <SocialLogin />
                         </div>
                     </div>
