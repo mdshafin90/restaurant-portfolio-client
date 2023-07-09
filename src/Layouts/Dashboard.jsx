@@ -21,22 +21,22 @@ const Dashboard = () => {
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
-                <Outlet />
+                {/* {/ Page content here /} */}
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-
+                <Outlet></Outlet>
             </div>
-            <div className="drawer-side bg-[#D1A054]">
+            <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full">
+                <ul className="menu p-4 w-80 h-full bg-[#D1A054]">
                     <li className="text-center text-3xl font-bold uppercase mb-2">Happy Grill</li>
                     <li className="text-center text-[16px] font-bold uppercase mb-5">Restaurant & Steak House</li>
                     {
                         isAdmin ?
                             <>
                                 <li className="font-bold text-[20px] mb-2"><NavLink to="/"><FaHome /> Admin Home</NavLink></li>
-                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/additems"><ImSpoonKnife /> Add Items</NavLink></li>
-                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/reservations"><AiOutlineBars /> Manage Items</NavLink></li>
-                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/history"><BiSolidBookAlt /> Manage Bookings</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/addItem"><ImSpoonKnife /> Add an Item</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/manageitems"><AiOutlineBars /> Manage Items</NavLink></li>
+                                <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/"><BiSolidBookAlt /> Manage Bookings</NavLink></li>
                                 <li className="font-bold text-[20px] mb-2"><NavLink to="/dashboard/allusers"><PiUsersThreeFill /> All Users</NavLink></li>
                             </>
 
