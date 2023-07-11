@@ -2,13 +2,14 @@ import { Helmet } from "react-helmet-async";
 import useCart from "../../../Hooks/useCart";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyCart = () => {
     const [cart, refetch] = useCart();
     console.log(cart)
     const total = cart.reduce((sum, item) => item.price + sum, 0);
-    const newTotal = total.toFixed(2);
+    const newTotal = parseFloat(total.toFixed(2));
 
     const handleDelete = (item) => {
         Swal.fire({
@@ -47,7 +48,9 @@ const MyCart = () => {
             <div className="uppercase flex justify-evenly font-bold items-center h-[60px] mb-5 w-full">
                 <h3 className="text-3xl">Total Items: {cart.length}</h3>
                 <h3 className="text-3xl">Total Price: ${newTotal}</h3>
-                <button className="btn btn-outline btn-sm">Pay</button>
+                <Link to="/dashboard/payment">
+                    <button className="btn btn-outline btn-sm">Pay</button>
+                </Link>
             </div>
 
             <div className="overflow-x-auto">
